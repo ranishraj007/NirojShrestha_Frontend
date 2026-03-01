@@ -14,9 +14,9 @@ type ArticleCardProps = {
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
-    <div className="border flex flex-col gap-4 rounded-lg shadow-[0px_3.28px_4.92px_-3.28px_rgba(0,0,0,0.1)] shadow-[0px_8.2px_12.29px_-2.46px_rgba(0,0,0,0.1)] shrink-0">
+    <div className="flex h-full flex-col gap-4 rounded-lg shadow-[0px_3.28px_4.92px_-3.28px_rgba(0,0,0,0.1)] shadow-[0px_8.2px_12.29px_-2.46px_rgba(0,0,0,0.1)] shrink-0">
       <div
-        className="pt-[20px] pl-[22px]"
+        className="pt-[20px] pl-[22px] rounded-t-lg"
         style={{
           backgroundImage: `url(${article.image})`,
           backgroundSize: "cover",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ArticleCard, { type Article } from "./HomepageCards/ArticleCard";
 import ArticleImage from "@/assets/images/CardImage.png";
 import ArticleImage1 from "@/assets/images/HeroSectionBGImage.png";
@@ -19,7 +19,8 @@ const ArticleSection = () => {
       category: "Agriculture",
       date: "June 18, 2024",
       author: "Niroj Shrestha",
-      description: "Description of Article 2  </br> with more text to test the layout and see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello this and see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello thisand see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello thisand see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello this",
+      description:
+        "Description of Article 2  </br> with more text to test the layout and see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello this and see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello thisand see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello thisand see how it handles longer descriptions. This should give us a good idea of the card's flexibility and responsiveness.   hello this",
       image: ArticleImage1,
       link: "#",
     },
@@ -52,50 +53,90 @@ const ArticleSection = () => {
     },
   ];
 
-  const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 3; // how many cards to show at once
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  const handleNext = () => {
-    setStartIndex((prev) =>
-      prev + visibleCount >= articles.length ? 0 : prev + visibleCount,
-    );
-  };
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsPerView(3);
+      } else if (window.innerWidth >= 768) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(1);
+      }
+    };
 
-  const handlePrev = () => {
-    setStartIndex((prev) =>
-      prev - visibleCount < 0
-        ? articles.length - visibleCount
-        : prev - visibleCount,
-    );
-  };
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+
+    return () => {
+      window.removeEventListener("resize", updateCardsPerView);
+    };
+  }, []);
+
+  const totalPages = Math.ceil(articles.length / cardsPerView);
+  const safeCurrentPage = Math.min(currentPage, Math.max(totalPages - 1, 0));
+  const articlePages = Array.from({ length: totalPages }, (_, pageIndex) =>
+    articles.slice(pageIndex * cardsPerView, pageIndex * cardsPerView + cardsPerView),
+  );
+
+  const shouldShowPagination = articles.length > 3;
+  const isFirstPage = safeCurrentPage === 0;
+  const isLastPage = safeCurrentPage >= totalPages - 1;
 
   return (
-    <div className="flex flex-col pt-12 items-center w-full">
-      <h2 className="text-2xl lg:text-4xl font-bold text-black mb-8">
-        Articles
-      </h2>
+    <div className="flex w-full flex-col items-center pt-12">
+      <h2 className="mb-8 text-2xl font-bold text-black lg:text-4xl">Articles</h2>
 
-      {/* Article Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xls px-4">
-        {articles
-          .slice(startIndex, startIndex + visibleCount)
-          .map((article, index) => (
-            <ArticleCard key={index} article={article} />
+      <div className="w-full max-w-[1280px] overflow-hidden px-4">
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${safeCurrentPage * 100}%)` }}
+        >
+          {articlePages.map((page, pageIndex) => (
+            <div key={pageIndex} className="min-w-full">
+              <div className="flex flex-wrap justify-center gap-6">
+                {page.map((article, articleIndex) => (
+                  <div
+                    key={`${article.title}-${articleIndex}`}
+                    className="h-full w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                  >
+                    <ArticleCard article={article} />
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
+        </div>
       </div>
 
-      {/* Carousel Buttons */}
-      {articles.length > visibleCount && (
-        <div className="flex gap-4 mt-6">
+      {shouldShowPagination && (
+        <div className="mt-6 flex items-center justify-center gap-3">
           <button
-            onClick={handlePrev}
-            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+            type="button"
+            onClick={() =>
+              setCurrentPage((page) =>
+                Math.max(Math.min(page, totalPages - 1) - 1, 0),
+              )
+            }
+            disabled={isFirstPage}
+            className="cursor-pointer rounded-full border border-[#9E9E9E] bg-[#F5F5F5] px-5 py-2 text-[14px] font-semibold text-[#424242] transition hover:bg-[#EEEEEE] disabled:cursor-not-allowed disabled:opacity-40"
           >
-            Prev
+            Previous
           </button>
+          <span className="text-[14px] font-semibold text-[#616161]">
+            {safeCurrentPage + 1} / {totalPages}
+          </span>
           <button
-            onClick={handleNext}
-            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+            type="button"
+            onClick={() =>
+              setCurrentPage((page) =>
+                Math.min(Math.min(page, totalPages - 1) + 1, totalPages - 1),
+              )
+            }
+            disabled={isLastPage}
+            className="cursor-pointer rounded-full border border-[#9E9E9E] bg-[#F5F5F5] px-5 py-2 text-[14px] font-semibold text-[#424242] transition hover:bg-[#EEEEEE] disabled:cursor-not-allowed disabled:opacity-40"
           >
             Next
           </button>
