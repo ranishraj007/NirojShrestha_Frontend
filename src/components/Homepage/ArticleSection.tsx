@@ -78,7 +78,10 @@ const ArticleSection = () => {
   const totalPages = Math.ceil(articles.length / cardsPerView);
   const safeCurrentPage = Math.min(currentPage, Math.max(totalPages - 1, 0));
   const articlePages = Array.from({ length: totalPages }, (_, pageIndex) =>
-    articles.slice(pageIndex * cardsPerView, pageIndex * cardsPerView + cardsPerView),
+    articles.slice(
+      pageIndex * cardsPerView,
+      pageIndex * cardsPerView + cardsPerView,
+    ),
   );
 
   const shouldShowPagination = articles.length > 3;
@@ -87,7 +90,9 @@ const ArticleSection = () => {
 
   return (
     <div className="flex w-full flex-col items-center pt-12">
-      <h2 className="mb-8 text-2xl font-bold text-black lg:text-4xl">Articles</h2>
+      <h2 className="mb-8 text-2xl font-bold text-black lg:text-4xl">
+        Articles
+      </h2>
 
       <div className="w-full max-w-[1280px] overflow-hidden px-4">
         <div
@@ -110,6 +115,8 @@ const ArticleSection = () => {
           ))}
         </div>
       </div>
+
+      {/* pagenation for the article cards */}
 
       {shouldShowPagination && (
         <div className="mt-6 flex items-center justify-center gap-3">

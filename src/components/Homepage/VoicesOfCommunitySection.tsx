@@ -125,7 +125,7 @@ const VoicesOfCommunitySection = () => {
           ))}
         </div>
       </div>
-
+      {/* pagenation for the testimonial cards */}
       {shouldShowPagination && (
         <div className="flex items-center justify-center gap-3">
           <button
