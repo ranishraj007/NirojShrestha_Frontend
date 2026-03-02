@@ -1,5 +1,3 @@
-import React from "react";
-
 export type Testimonial = {
   name: string;
   designation: string;
