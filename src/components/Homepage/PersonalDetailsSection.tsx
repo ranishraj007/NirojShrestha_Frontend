@@ -24,7 +24,7 @@ const PersonalDetailsSection = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-4 text-[#424242] text-base lg:text-[20px] leading-[36px] font-[700] px-[33px]">
+        <div className="flex flex-col gap-4 text-[#424242] text-base lg:text-[20px] leading-[36px] font-[700] px-[12px] lg:px-[33px]">
           <p>
             <span className="text-[#2E7D32] font-bold">Niroj Shrestha</span> is
             a social work professional and CLC development practitioner from

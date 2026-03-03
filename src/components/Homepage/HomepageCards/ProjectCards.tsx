@@ -22,13 +22,6 @@ const ProjectCards = ({ project }: { project: Project }) => {
           backgroundPosition: "center",
         }}
       >
-        {/* <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-[200px] object-cover md:h-full md:w-[300px]"
-        /> */}
-        {/* background: linear-gradient(0deg, rgba(46, 125, 50, 0.6) 0%, rgba(0, 0, 0, 0) 100%); */}
-
         <div className="h-full w-full bg-gradient-to-b from-[#00000000] to-[#2E7D3299] pt-[27px] pl-[32px]">
           <span className="text-[#2E7D32] rounded-full bg-[#FFFFFFF2] px-[18px] py-[10px] shadow-[0px_5.25px_7.88px_-5.25px_#0000001A,0px_13.14px_19.7px_-3.94px_#0000001A]">
             {project.category}

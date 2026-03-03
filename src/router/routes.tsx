@@ -23,6 +23,7 @@ const PageNotFound = React.lazy(() => import("@/pages/PageNotFound"));
 const Homepage = React.lazy(() => import("@/pages/Homepage"));
 const ErrorBoundary = React.lazy(() => import("@/components/ErrorBoundary"));
 const Inspiration = React.lazy(() => import("@/pages/Inspiration"));
+const Contact = React.lazy(() => import("@/pages/Contact"));
 
 // Dynamically loaded components
 export const LazyBaseLayout = () => (
@@ -48,5 +49,11 @@ export const LazyErrorBoundary = () => (
 export const LazyInspiration = () => (
   <Suspense fallback={<Loader />}>
     <Inspiration />
+  </Suspense>
+);
+
+export const LazyContact = () => (
+  <Suspense fallback={<Loader />}>
+    <Contact />
   </Suspense>
 );
