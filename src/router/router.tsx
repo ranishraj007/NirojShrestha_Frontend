@@ -1,6 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { LazyPageNotFound, LazyBaseLayout, LazyHomepage, LazyErrorBoundary } from "./routes";
+import {
+  LazyPageNotFound,
+  LazyBaseLayout,
+  LazyHomepage,
+  LazyErrorBoundary,
+  LazyInspiration,
+} from "./routes";
 
 export const router = createBrowserRouter([
   {
@@ -11,9 +17,18 @@ export const router = createBrowserRouter([
   {
     element: <LazyBaseLayout />,
     children: [
-      // onboarding
       {
         path: "/",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyHomepage />,
+      },
+      {
+        path: "/inspiration",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyInspiration />,
+      },
+      {
+        path: "/contact",
         errorElement: <LazyErrorBoundary />,
         element: <LazyHomepage />,
       },

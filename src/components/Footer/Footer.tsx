@@ -47,12 +47,20 @@ const Footer = () => {
                     size={20}
                   />
                 </div>
-                <a
-                  href="tel:+9779851013055"
-                  className="hover:text-[blue] transition-colors"
-                >
-                  <span>+977 9851013055</span>
-                </a>
+                <div className="flex flex-col">
+                  <a
+                    href="tel:+9779851013055"
+                    className="hover:text-[blue] transition-colors"
+                  >
+                    <span>+977 9851013055</span>
+                  </a>
+                  <a
+                    href="tel:015928105"
+                    className="hover:text-[blue] transition-colors"
+                  >
+                    <span>015928105</span>
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3 group">
                 <div className="bg-gray-700/50 p-2 rounded-lg group-hover:bg-blue-600/20 transition-colors">

@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "Blog", path: "/blog" },
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
+    { name: "Inspiration", path: "/inspiration" },
   ];
 
   const toggleMenu = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative flex flex-row justify-between items-center px-[30px] py-[20px] md:py-0">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex flex-row justify-between items-center px-[30px] py-[20px] md:py-0 transition-all duration-300">
       <div className="md:pt-[28px]">
         <a
           href="/"

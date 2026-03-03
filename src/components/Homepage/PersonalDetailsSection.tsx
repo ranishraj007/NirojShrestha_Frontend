@@ -24,32 +24,85 @@ const PersonalDetailsSection = () => {
           </h1>
         </div>
 
-        {/* Description */}
         <div className="flex flex-col gap-4 text-[#424242] text-base lg:text-[20px] leading-[36px] font-[700] px-[33px]">
           <p>
-            Born and raised in{" "}
-            <span className="text-[#2E7D32]">Pharping, Kathmandu Valley, </span>{" "}
-            Niroj Shrestha has devoted his life to creating pathways for
-            education, empowerment, and sustainable development in rural Nepal.
-          </p>
-
-          <p>
-            As the founder of{" "}
+            <span className="text-[#2E7D32] font-bold">Niroj Shrestha</span> is
+            a social work professional and CLC development practitioner from
             <span className="text-[#2E7D32]">
-              Shikharapur Community Campus,{" "}
-            </span>{" "}
-            he has transformed how communities access learning—championing
-            education for youth, economic empowerment for women, and sustainable
-            agriculture for local farmers.
+              {" "}
+              Dakshinkal Municipality, Kathmandu
+            </span>
+            , born in a Newari ethnic community. He holds a Master’s in Social
+            Work from
+            <span className="text-[#4FC3F7]"> St. Xavier’s College</span> and is
+            currently pursuing an MPhil in Social Work from
+            <span className="text-[#4FC3F7]"> Tribhuvan University</span>.
           </p>
 
           <p>
-            His work bridges local tradition with global innovation, having
-            participated in youth exchange programs in{" "}
-            <span className="text-[#4FC3F7]">Japan</span> and leadership
-            initiatives in the{" "}
-            <span className="text-[#4FC3F7]">United States, </span> bringing
-            world-class insights back to grassroots action.
+            As the Founder and Principal of
+            <span className="text-[#2E7D32]">
+              {" "}
+              Shikharapur Community Campus
+            </span>{" "}
+            and an initiator of the
+            <span className="text-[#2E7D32]">
+              {" "}
+              Shikharapur Community Learning Center
+            </span>
+            , he has led impactful community-based projects such as the
+            <span className="text-[#2E7D32]"> Bottle House Project</span> — a
+            Japanese award-winning model of
+            <span className="text-[#4FC3F7]">
+              {" "}
+              Education for Sustainable Development (ESD)
+            </span>
+            , promoted by UNESCO and Nepal’s Ministry of Education.
+          </p>
+
+          <p>
+            Niroj has represented Nepal internationally through the
+            <span className="text-[#4FC3F7]"> IVLP Program (USA)</span>,
+            multiple
+            <span className="text-[#4FC3F7]">
+              {" "}
+              ESD and Youth Exchange Programs in Japan
+            </span>
+            , and the{" "}
+            <span className="text-[#4FC3F7]">
+              {" "}
+              CLC-Kominkan International Conference
+            </span>
+            . In 2024, he represented Nepal at the
+            <span className="text-[#4FC3F7]"> ESD Weeks in Luxembourg</span>,
+            strengthening global collaboration in sustainability and education.
+          </p>
+
+          <p>
+            He has worked with
+            <span className="text-[#2E7D32]">
+              {" "}
+              UNESCO Office in Kathmandu
+            </span>{" "}
+            and
+            <span className="text-[#2E7D32]"> CEHRD</span>, supporting lifelong
+            learning and non-formal education initiatives. His research on
+            <span className="text-[#4FC3F7]">
+              {" "}
+              Lifelong Learning Education and Intangible Cultural Heritage
+            </span>
+            was published by{" "}
+            <span className="text-[#4FC3F7]"> ICHCAP Korea</span>.
+          </p>
+
+          <p>
+            Passionate about{" "}
+            <span className="text-[#2E7D32]"> youth leadership</span>,
+            <span className="text-[#2E7D32]"> women’s empowerment</span>, and
+            <span className="text-[#2E7D32]"> lifelong learning</span>, Niroj
+            continues to inspire communities through education, sustainability
+            campaigns, and skill-based initiatives that reduce migration and
+            promote local entrepreneurship.
           </p>
         </div>
 
