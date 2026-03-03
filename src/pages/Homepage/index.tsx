@@ -2,6 +2,7 @@ import ArticleSection from "@/components/Homepage/ArticleSection";
 import HeroSection from "@/components/Homepage/HeroSection";
 import PersonalDetailsSection from "@/components/Homepage/PersonalDetailsSection";
 import ProjectSection from "@/components/Homepage/ProjectSection";
+import StayConnectedSection from "@/components/Homepage/StayConnectedSection";
 import VoicesOfCommunitySection from "@/components/Homepage/VoicesOfCommunitySection";
 
 const Homepage = () => {
@@ -12,6 +13,7 @@ const Homepage = () => {
       <PersonalDetailsSection />
       <ArticleSection />
       <VoicesOfCommunitySection />
+      <StayConnectedSection />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const ProjectCards = ({ project }: { project: Project }) => {
     <div className="flex flex-col md:flex-row rounded-[32px] shadow-md shadow-[#00000040] overflow-hidden bg-[#FFFFFF] w-full ">
       {/* left side  */}
       <div
-        className="lg:w-[50%] w-full h-[500px] md:h-[890px]"
+        className="lg:w-[50%] w-full h-[300px] md:h-[890px]"
         style={{
           backgroundImage: `url(${project.image})`,
           backgroundSize: "cover",
