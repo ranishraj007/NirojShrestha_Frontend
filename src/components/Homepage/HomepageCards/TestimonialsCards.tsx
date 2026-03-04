@@ -49,7 +49,7 @@ const TestimonialsCards = ({
           ))}
         </div>
 
-        <p className="text-[15px] leading-[1.7] text-[#5D4037]">
+        <p className="line-clamp-6 text-[15px] leading-[1.7] text-[#5D4037]">
           "{testimonial.comment}"
         </p>
       </div>

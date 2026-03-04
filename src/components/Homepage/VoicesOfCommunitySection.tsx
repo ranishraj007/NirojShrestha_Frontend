@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 import TestimonialsCards, {
   type Testimonial,
 } from "./HomepageCards/TestimonialsCards";
+
+const SWIPE_THRESHOLD_PX = 60;
 
 const VoicesOfCommunitySection = () => {
   const testimonials: Testimonial[] = [
@@ -57,6 +59,9 @@ const VoicesOfCommunitySection = () => {
 
   const [cardsPerView, setCardsPerView] = useState(3);
   const [currentPage, setCurrentPage] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef<number | null>(null);
 
   useEffect(() => {
     const updateCardsPerView = () => {
@@ -79,6 +84,11 @@ const VoicesOfCommunitySection = () => {
 
   const totalPages = Math.ceil(testimonials.length / cardsPerView);
   const safeCurrentPage = Math.min(currentPage, Math.max(totalPages - 1, 0));
+
+  useEffect(() => {
+    setCurrentPage(safeCurrentPage);
+  }, [safeCurrentPage]);
+
   const testimonialPages = Array.from({ length: totalPages }, (_, pageIndex) =>
     testimonials.slice(
       pageIndex * cardsPerView,
@@ -89,6 +99,34 @@ const VoicesOfCommunitySection = () => {
   const shouldShowPagination = testimonials.length > 3;
   const isFirstPage = safeCurrentPage === 0;
   const isLastPage = safeCurrentPage >= totalPages - 1;
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (totalPages <= 1) return;
+    dragStartX.current = event.clientX;
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (!isDragging || dragStartX.current === null) return;
+    setDragOffset(event.clientX - dragStartX.current);
+  };
+
+  const handlePointerEnd = () => {
+    if (!isDragging) return;
+
+    if (Math.abs(dragOffset) > SWIPE_THRESHOLD_PX) {
+      if (dragOffset < 0 && !isLastPage) {
+        setCurrentPage((page) => Math.min(page + 1, totalPages - 1));
+      } else if (dragOffset > 0 && !isFirstPage) {
+        setCurrentPage((page) => Math.max(page - 1, 0));
+      }
+    }
+
+    setDragOffset(0);
+    dragStartX.current = null;
+    setIsDragging(false);
+  };
 
   return (
     <div className="mt-[48px] flex flex-col gap-[32px] bg-gradient-to-b from-[#88695E] to-[#88695E] px-[38px] py-[48px]">
@@ -101,10 +139,18 @@ const VoicesOfCommunitySection = () => {
         </h1>
       </div>
 
-      <div className="mx-auto w-full max-w-[1280px] overflow-hidden">
+      <div className="mx-auto w-full overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${safeCurrentPage * 100}%)` }}
+          className={`flex select-none touch-pan-y ease-out ${isDragging ? "" : "transition-transform duration-500"}`}
+          style={{
+            transform: `translateX(calc(-${safeCurrentPage * 100}% + ${dragOffset}px))`,
+            cursor: totalPages > 1 ? (isDragging ? "grabbing" : "grab") : "default",
+          }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerEnd}
+          onPointerCancel={handlePointerEnd}
+          onPointerLeave={handlePointerEnd}
         >
           {testimonialPages.map((page, pageIndex) => (
             <div key={pageIndex} className="min-w-full">
@@ -112,7 +158,7 @@ const VoicesOfCommunitySection = () => {
                 {page.map((testimonial, index) => (
                   <div
                     key={`${testimonial.name}-${index}`}
-                    className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                    className="h-[430px] w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                   >
                     <TestimonialsCards
                       testimonial={testimonial}

@@ -14,21 +14,21 @@ type ArticleCardProps = {
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
-    <div className="flex h-full flex-col gap-4 rounded-lg shadow-[0px_3.28px_4.92px_-3.28px_rgba(0,0,0,0.1)] shadow-[0px_8.2px_12.29px_-2.46px_rgba(0,0,0,0.1)] shrink-0">
+    <div className="flex h-full min-h-0 shrink-0 flex-col gap-4 rounded-lg shadow-[0px_3.28px_4.92px_-3.28px_rgba(0,0,0,0.1)] shadow-[0px_8.2px_12.29px_-2.46px_rgba(0,0,0,0.1)]">
       <div
         className="pt-[20px] pl-[22px] rounded-t-lg"
         style={{
           backgroundImage: `url(${article.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "210px",
+          height: "250px",
         }}
       >
         <span className="rounded-[12px] bg-[#2BBD06] px-[14px] py-[7px] text-[10px] font-bold text-white shadow-[0px_3.28px_4.92px_-3.28px_rgba(0,0,0,0.1)] shadow-[0px_8.2px_12.29px_-2.46px_rgba(0,0,0,0.1)]">
           {article.category}
         </span>
       </div>
-      <div className="p-[19px] flex flex-col gap-[6px] justify-between flex-1">
+      <div className="flex flex-1 flex-col justify-between gap-[6px] p-[19px]">
         <div className="flex flex-col gap-[6px]">
           <span className="text-[#757575] text-[12px] font-[400]">
             {article.date}
