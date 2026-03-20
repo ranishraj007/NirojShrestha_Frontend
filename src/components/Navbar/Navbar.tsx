@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -70,15 +72,23 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex flex-row justify-between gap-[16px] pt-[24px] text-[#424242] text-[20px] font-[400]">
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.path}
-            className="px-[21px] py-[10px] hover:text-[#2E7D32] transition-all duration-300 ease-in-out transform hover:scale-110"
-          >
-            {link.name}
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = link.path === "/" 
+            ? location.pathname === "/" 
+            : location.pathname.startsWith(link.path);
+
+          return (
+            <a
+              key={link.name}
+              href={link.path}
+              className={`px-[21px] py-[10px] transition-all duration-300 ease-in-out transform hover:scale-110 ${
+                isActive ? "text-[#2E7D32] font-semibold" : "hover:text-[#2E7D32]"
+              }`}
+            >
+              {link.name}
+            </a>
+          );
+        })}
       </div>
 
       {/* Mobile Menu */}

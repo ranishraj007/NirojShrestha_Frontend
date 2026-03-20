@@ -8,6 +8,8 @@ import {
   LazyInspiration,
   LazyContact,
   LazyAbout,
+  LazyBlog,
+  LazyBlogDetail,
 } from "./routes";
 
 export const router = createBrowserRouter([
@@ -38,6 +40,16 @@ export const router = createBrowserRouter([
         path: "/about",
         errorElement: <LazyErrorBoundary />,
         element: <LazyAbout />,
+      },
+      {
+        path: "/blog",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyBlog />,
+      },
+      {
+        path: "/blog/:slug",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyBlogDetail />,
       }
     ],
   },

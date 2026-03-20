@@ -1,5 +1,6 @@
 // src/router/routes.tsx
 import About from "@/pages/About";
+import Blog from "@/pages/Blog";
 import React, { Suspense } from "react";
 import { ScaleLoader } from "react-spinners";
 
@@ -20,6 +21,7 @@ const BaseLayout = React.lazy(() => import("@/components/Layouts/BaseLayout"));
 // const ProtectedLayout = React.lazy(() => import("@/components/Layouts/ProtectedLayout"));
 
 // Pages
+const BlogDetail = React.lazy(() => import("@/pages/BlogDetail"));
 const PageNotFound = React.lazy(() => import("@/pages/PageNotFound"));
 const Homepage = React.lazy(() => import("@/pages/Homepage"));
 const ErrorBoundary = React.lazy(() => import("@/components/ErrorBoundary"));
@@ -62,5 +64,17 @@ export const LazyContact = () => (
 export const LazyAbout = () => (
   <Suspense fallback={<Loader />}>
     <About />
+  </Suspense>
+)
+
+export const LazyBlog = () => (
+  <Suspense fallback={<Loader />}>
+    <Blog />
+  </Suspense>
+)
+
+export const LazyBlogDetail = () => (
+  <Suspense fallback={<Loader />}>
+    <BlogDetail />
   </Suspense>
 )
