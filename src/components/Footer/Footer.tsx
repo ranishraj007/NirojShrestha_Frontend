@@ -19,7 +19,7 @@ const Footer = () => {
       }}
       className="text-gray-300 pt-16 pb-8 border-t border-gray-700 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Get In Touch */}
           <div className="animate-fade-in-up">

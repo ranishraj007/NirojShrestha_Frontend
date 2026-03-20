@@ -1,4 +1,5 @@
 // src/router/routes.tsx
+import About from "@/pages/About";
 import React, { Suspense } from "react";
 import { ScaleLoader } from "react-spinners";
 
@@ -57,3 +58,9 @@ export const LazyContact = () => (
     <Contact />
   </Suspense>
 );
+
+export const LazyAbout = () => (
+  <Suspense fallback={<Loader />}>
+    <About />
+  </Suspense>
+)

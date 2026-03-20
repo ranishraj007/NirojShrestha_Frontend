@@ -7,6 +7,7 @@ import {
   LazyErrorBoundary,
   LazyInspiration,
   LazyContact,
+  LazyAbout,
 } from "./routes";
 
 export const router = createBrowserRouter([
@@ -33,6 +34,11 @@ export const router = createBrowserRouter([
         errorElement: <LazyErrorBoundary />,
         element: <LazyContact />,
       },
+      {
+        path: "/about",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyAbout />,
+      }
     ],
   },
 ]);

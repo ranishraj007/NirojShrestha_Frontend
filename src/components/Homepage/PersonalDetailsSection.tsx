@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const PersonalDetailsSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="pt-[48px] px-[31px] flex flex-col gap-[18px] lg:gap-[24px]">
       <div className="flex flex-col gap-6">
@@ -24,7 +27,7 @@ const PersonalDetailsSection = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-4 text-[#424242] text-base lg:text-[20px] leading-[36px] font-[700] px-[12px] lg:px-[33px]">
+        <div className="flex flex-col gap-4 text-[#424242] text-base lg:text-[20px] leading-[36px] font-[700]">
           <p>
             <span className="text-[#2E7D32] font-bold">Niroj Shrestha</span> is
             a social work professional and CLC development practitioner from
@@ -109,7 +112,10 @@ const PersonalDetailsSection = () => {
         {/* read full story */}
 
         <div className="flex justify-center">
-          <button className="bg-[#787878] px-[45px] py-[21px] text-[#FFFFFF] text-[20px] font-[700] rounded-[20px] cursor-pointer">
+          <button 
+            onClick={() => navigate('/about')}
+            className="bg-[#787878] px-[45px] py-[21px] text-[#FFFFFF] text-[20px] font-[700] rounded-[20px] cursor-pointer hover:bg-[#666666] transition-colors"
+          >
             Read Full Story
           </button>
         </div>
