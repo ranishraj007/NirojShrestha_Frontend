@@ -1,4 +1,3 @@
-import React from "react";
 import NirojShrestha from "@/assets/images/NirojShresthaImage.jpeg";
 
 const About = () => {
