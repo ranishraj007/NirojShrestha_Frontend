@@ -1,6 +1,7 @@
 // src/router/routes.tsx
 import About from "@/pages/About";
 import Blog from "@/pages/Blog";
+import Project from "@/pages/Projects";
 import React, { Suspense } from "react";
 import { ScaleLoader } from "react-spinners";
 
@@ -22,6 +23,9 @@ const BaseLayout = React.lazy(() => import("@/components/Layouts/BaseLayout"));
 
 // Pages
 const BlogDetail = React.lazy(() => import("@/pages/BlogDetail"));
+const ProjectDetail = React.lazy(() => import("@/pages/ProjectDetail"));
+const Article = React.lazy(() => import("@/pages/Articles"));
+const ArticleDetail = React.lazy(() => import("@/pages/ArticleDetail"));
 const PageNotFound = React.lazy(() => import("@/pages/PageNotFound"));
 const Homepage = React.lazy(() => import("@/pages/Homepage"));
 const ErrorBoundary = React.lazy(() => import("@/components/ErrorBoundary"));
@@ -65,16 +69,40 @@ export const LazyAbout = () => (
   <Suspense fallback={<Loader />}>
     <About />
   </Suspense>
-)
+);
 
 export const LazyBlog = () => (
   <Suspense fallback={<Loader />}>
     <Blog />
   </Suspense>
-)
+);
 
 export const LazyBlogDetail = () => (
   <Suspense fallback={<Loader />}>
     <BlogDetail />
   </Suspense>
-)
+);
+
+export const LazyArticles = () => (
+  <Suspense fallback={<Loader />}>
+    <Article />
+  </Suspense>
+);
+
+export const LazyProject = () => (
+  <Suspense fallback={<Loader />}>
+    <Project />
+  </Suspense>
+);
+
+export const LazyProjectDetail = () => (
+  <Suspense fallback={<Loader />}>
+    <ProjectDetail />
+  </Suspense>
+);
+
+export const LazyArticleDetail = () => (
+  <Suspense fallback={<Loader />}>
+    <ArticleDetail />
+  </Suspense>
+);

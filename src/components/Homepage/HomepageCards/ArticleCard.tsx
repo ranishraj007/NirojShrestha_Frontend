@@ -42,7 +42,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         </div>
         <div className="flex justify-between border-t pt-[14px] text-[14px] text-[#2E7D32] font-bold">
           <span className="">{article.author}</span>
-          <button className="cursor-pointer">Read More</button>
+          <span>Read More</span>
         </div>
       </div>
     </div>

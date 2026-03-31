@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface Project {
   title: string;
   description: string;
@@ -7,12 +9,11 @@ interface Project {
 }
 
 const ProjectCards = ({ project }: { project: Project }) => {
-  const Navigate = () => {
-    window.open(project.link, "_blank");
-  };
   return (
-    // #00000040
-    <div className="flex flex-col md:flex-row rounded-[32px] shadow-md shadow-[#00000040] overflow-hidden bg-[#FFFFFF] w-full ">
+    <Link
+      to={project.link}
+      className="flex w-full flex-col overflow-hidden rounded-[32px] bg-[#FFFFFF] shadow-md shadow-[#00000040] md:flex-row"
+    >
       {/* left side  */}
       <div
         className="lg:w-[50%] w-full h-[300px] md:h-[890px]"
@@ -47,15 +48,12 @@ const ProjectCards = ({ project }: { project: Project }) => {
           </p>
 
           {/* CTA */}
-          <button
-            onClick={Navigate}
-            className="w-fit cursor-pointer text-[16px] lg:text-[24px] font-[700] text-[#449548] leading-[100%]"
-          >
+          <span className="w-fit text-[16px] font-[700] leading-[100%] text-[#449548] lg:text-[24px]">
             Explore this project
-          </button>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,41 +1,25 @@
 import { useState, useEffect } from "react";
 import ProjectCards from "./HomepageCards/ProjectCards";
-import CardImage from "@/assets/images/CardImage.png";
-
-const projects = [
-  {
-    title: "Project 1",
-    description: "Description of Project 1",
-    category: "Education",
-    image: CardImage,
-    link: "#",
-  },
-  {
-    title: "Project 2",
-    description: "Description of Project 2",
-    category: "Agriculture",
-    image: CardImage,
-    link: "#",
-  },
-  {
-    title: "Project 3",
-    description: "Description of Project 3",
-    category: "Health",
-    image: CardImage,
-    link: "#",
-  },
-];
+import { getLatestItems } from "@/lib/content";
+import { projects } from "@/staticData";
 
 const ProjectSection = () => {
+  const featuredProjects = getLatestItems(projects, 3).map((project) => ({
+    title: project.title,
+    description: project.description,
+    category: project.category,
+    image: project.image,
+    link: `/projects/${project.slug}`,
+  }));
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredProjects.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [featuredProjects.length]);
 
   return (
     <div className="pt-[48px] px-[31px] flex flex-col gap-[18px] lg:gap-[24px]">
@@ -56,7 +40,7 @@ const ProjectSection = () => {
             className="flex transition-transform duration-500 ease-in-out w-full"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {projects.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <div
                 key={index}
                 className="w-full shrink-0 flex justify-center gap-[10px]"
@@ -69,7 +53,7 @@ const ProjectSection = () => {
 
         {/* three dot of carousel */}
         <div className="flex justify-center items-center gap-[8px] mt-[14px]">
-          {projects.map((_, index) => (
+          {featuredProjects.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}

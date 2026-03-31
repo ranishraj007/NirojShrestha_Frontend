@@ -10,6 +10,10 @@ import {
   LazyAbout,
   LazyBlog,
   LazyBlogDetail,
+  LazyProject,
+  LazyProjectDetail,
+  LazyArticles,
+  LazyArticleDetail,
 } from "./routes";
 
 export const router = createBrowserRouter([
@@ -50,7 +54,27 @@ export const router = createBrowserRouter([
         path: "/blog/:slug",
         errorElement: <LazyErrorBoundary />,
         element: <LazyBlogDetail />,
-      }
+      },
+      {
+        path: "/projects",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyProject />,
+      },
+      {
+        path: "/projects/:slug",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyProjectDetail />,
+      },
+      {
+        path: "/articles",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyArticles />,
+      },
+      {
+        path: "/articles/:slug",
+        errorElement: <LazyErrorBoundary />,
+        element: <LazyArticleDetail />,
+      },
     ],
   },
 ]);
