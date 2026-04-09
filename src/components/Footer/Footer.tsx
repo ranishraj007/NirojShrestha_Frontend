@@ -23,14 +23,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Get In Touch */}
           <div className="animate-fade-in-up">
-            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-[#3FBC46] pb-2 inline-block">
               Get In Touch
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
-                <div className="mt-1 bg-gray-700/50 p-2 rounded-lg group-hover:bg-blue-600/20 transition-colors">
+                <div className="mt-1 bg-gray-700/50 p-2 rounded-lg group-hover:bg-green-600/20 transition-colors">
                   <MapPin
-                    className="text-blue-400 group-hover:text-blue-300 transition-colors"
+                    className="text-[#3FBC46] group-hover:text-green-300 transition-colors"
                     size={20}
                   />
                 </div>
@@ -41,37 +41,37 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3 group">
-                <div className="bg-gray-700/50 p-2 rounded-lg group-hover:bg-blue-600/20 transition-colors">
+                <div className="bg-gray-700/50 p-2 rounded-lg group-hover:bg-green-600/20 transition-colors">
                   <Phone
-                    className="text-blue-400 group-hover:text-blue-300 transition-colors"
+                    className="text-[#3FBC46] group-hover:text-green-300 transition-colors"
                     size={20}
                   />
                 </div>
                 <div className="flex flex-col">
                   <a
                     href="tel:+9779851013055"
-                    className="hover:text-[blue] transition-colors"
+                    className="hover:text-[green] transition-colors"
                   >
                     <span>+977 9851013055</span>
                   </a>
                   <a
                     href="tel:015928105"
-                    className="hover:text-[blue] transition-colors"
+                    className="hover:text-[green] transition-colors"
                   >
                     <span>015928105</span>
                   </a>
                 </div>
               </li>
               <li className="flex items-center gap-3 group">
-                <div className="bg-gray-700/50 p-2 rounded-lg group-hover:bg-blue-600/20 transition-colors">
+                <div className="bg-gray-700/50 p-2 rounded-lg group-hover:bg-green-600/20 transition-colors">
                   <Mail
-                    className="text-blue-400 group-hover:text-blue-300 transition-colors"
+                    className="text-[#3FBC46] group-hover:text-green-300 transition-colors"
                     size={20}
                   />
                 </div>
                 <a
                   href="mailto:Niroj@pharping.org.np"
-                  className="hover:text-[blue] transition-colors"
+                  className="hover:text-[green] transition-colors"
                 >
                   Niroj@pharping.org.np
                 </a>
@@ -84,7 +84,7 @@ const Footer = () => {
             className="animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
-            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-[#3FBC46] pb-2 inline-block">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -99,7 +99,7 @@ const Footer = () => {
                     to={link.path}
                     className="group flex items-center hover:text-white transition-all duration-300"
                   >
-                    <span className="text-blue-500 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    <span className="text-[#3FBC46] mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                       →
                     </span>
                     <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -116,7 +116,7 @@ const Footer = () => {
             className="lg:col-span-2 animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+            <h3 className="text-white text-xl font-bold mb-6 border-b-2 border-[#3FBC46] pb-2 inline-block">
               Stay Updated
             </h3>
             <p className="mb-5 text-sm leading-relaxed text-gray-400">
@@ -131,7 +131,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-800/60 border border-gray-600 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-500 transition-all shadow-inner"
+                  className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-800/60 border border-gray-600 focus:border-[#3FBC46] focus:outline-none focus:ring-2 focus:ring-[#3FBC46]/50 text-white placeholder-gray-500 transition-all shadow-inner"
                   required
                 />
                 <Mail
@@ -141,7 +141,7 @@ const Footer = () => {
               </div>
               <button
                 type="submit"
-                className="bg-blue-600 border border-blue-500 hover:bg-blue-700 hover:border-blue-600 text-white px-6 py-3 rounded-xl flex items-center justify-center gap-2 font-semibold transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] hover:-translate-y-0.5"
+                className="cursor-pointer bg-green-600 border border-[#3FBC46] hover:bg-green-700 hover:border-green-600 text-white px-6 py-3 rounded-xl flex items-center justify-center gap-2 font-semibold transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] hover:-translate-y-0.5"
               >
                 <span>Subscribe</span>
                 <Send size={18} />

@@ -20,13 +20,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex flex-row justify-between items-center px-[30px] py-[20px] md:py-0 transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex flex-row justify-between items-center px-[30px] py-[20px] md:py-[5px] transition-all duration-300">
       <div className="md:pt-[28px]">
         <a
           href="/"
           className="text-[#2E7D32] font-bold text-[28px] md:text-[31px] transform hover:scale-105 transition-all duration-300 ease-in-out block"
         >
-          Niroj Shrestha
+          Niroj <span className="text-[orange]/70">Shrestha</span>
         </a>
       </div>
 

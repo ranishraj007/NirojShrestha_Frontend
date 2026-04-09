@@ -29,7 +29,7 @@ const About = () => {
         <div className="flex justify-center w-full px-4 lg:px-0">
           <div className="relative w-full max-w-[500px] z-10 group">
             {/* Decorative background shape */}
-            <div className="absolute inset-0 bg-linear-to-tr from-[#E76F51] to-[#F4A261] rounded-[40px] transform translate-x-4 lg:translate-x-8 translate-y-4 lg:translate-y-8 -z-10 opacity-70 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
+            {/* <div className="absolute inset-0 bg-linear-to-tr from-[#E76F51] to-[#F4A261] rounded-[40px] transform translate-x-4 lg:translate-x-8 translate-y-4 lg:translate-y-8 -z-10 opacity-70 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div> */}
             <img
               src={NirojShrestha}
               alt="Niroj Shrestha Profile"

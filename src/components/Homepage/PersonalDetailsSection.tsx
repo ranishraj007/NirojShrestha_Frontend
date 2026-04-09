@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const PersonalDetailsSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="pt-[48px] px-[31px] flex flex-col gap-[18px] lg:gap-[24px]">
+    <section className="pt-[48px] px-[31px] lg:px-[80px] flex flex-col gap-[18px] lg:gap-[24px]">
       <div className="flex flex-col gap-6">
         {/* Section Heading */}
         <div className="flex justify-center">

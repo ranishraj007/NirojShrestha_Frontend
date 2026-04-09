@@ -8,7 +8,7 @@ import VoicesOfCommunitySection from "@/components/Homepage/VoicesOfCommunitySec
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="">
       <HeroSection />
       <ProjectSection />
       <PersonalDetailsSection />

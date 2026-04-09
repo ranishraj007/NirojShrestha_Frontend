@@ -13,7 +13,7 @@ const HeroSection = () => {
       >
         {/* background: linear-gradient(135deg, rgba(46, 125, 50, 0.9) 0%, rgba(46, 125, 50, 0.75) 50%, rgba(27, 94, 32, 0.9) 100%); */}
 
-        <div className="h-full w-full bg-gradient-to-b from-[#2E7D32E5] via-[#2E7D32BF] to-[#1B5E20E5] flex justify-center items-center md:py-[100px] md:px-[150px] xl:py-[211px] xl:px-[343px] py-[100px] px-[20px]">
+        <div className="h-full w-full bg-gradient-to-b from-[#2E7D32B2] via-[#2E7D3299] to-[#1B5E20B2] flex justify-center items-center md:py-[100px] md:px-[150px] xl:py-[211px] xl:px-[343px] py-[100px] px-[20px]">
           <div className="flex flex-col lg:gap-[16px] gap-[12px] items-start">
             <h1 className="text-[14px] lg:text-[16px] font-[500] leading-[26px] text-white text-center bg-[#FFFFFF33] border-[1.5px] border-[#FFFFFF4D] rounded-full px-[22px] py-[11px]">
               Community Leader | Educator | Change Maker

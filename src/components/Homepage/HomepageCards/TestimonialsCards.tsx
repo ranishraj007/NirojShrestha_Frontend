@@ -41,13 +41,13 @@ const TestimonialsCards = ({
           </div>
         </div>
 
-        <div className="flex gap-1 text-[18px] leading-none text-[#FF8F00]">
+        {/* <div className="flex gap-1 text-[18px] leading-none text-[#FF8F00]">
           {Array.from({ length: testimonial.rating }).map((_, index) => (
             <span key={index} aria-hidden="true">
               ★
             </span>
           ))}
-        </div>
+        </div> */}
 
         <p className="line-clamp-6 text-[15px] leading-[1.7] text-[#5D4037]">
           "{testimonial.comment}"

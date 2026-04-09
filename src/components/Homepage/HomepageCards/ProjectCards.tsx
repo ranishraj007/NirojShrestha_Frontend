@@ -30,25 +30,25 @@ const ProjectCards = ({ project }: { project: Project }) => {
         </div>
       </div>
       {/* right side */}
-      <div className="w-full lg:w-[50%] flex items-center py-[20px]">
+      <div className="w-full lg:w-[50%] flex items-center py-[20px] bg-gradient-to-b from-[#F0F0F0] to-[#E0FFDAE5] ">
         <div className="px-[30px] lg:px-[63px] flex flex-col gap-[16px]">
           {/* Badge */}
-          <span className="w-fit text-[#2E7D32] bg-[#2E7D321A] px-[24px] py-[6px] rounded-full text-[13px] lg:text-[16px] font-[700] leading-[100%]">
+          <span className="w-fit text-[white] bg-[green] px-[24px] py-[6px] rounded-full text-[13px] lg:text-[16px] font-[700] leading-[100%]">
             Featured Project
           </span>
 
           {/* Main Title */}
-          <h2 className="text-[#424242] text-[24px] lg:text-[49px] font-[700] leading-[110%]">
+          <h2 className="text-[black] text-[24px] lg:text-[49px] font-[700] leading-[110%]">
             {project.title}
           </h2>
 
           {/* Description */}
-          <p className="text-[#424242] text-[16px] lg:text-[24px] font-[400] leading-[140%]">
+          <p className="text-[black] text-[16px] lg:text-[24px] font-[400] leading-[140%]">
             {project.description}
           </p>
 
           {/* CTA */}
-          <span className="w-fit text-[16px] font-[700] leading-[100%] text-[#449548] lg:text-[24px]">
+          <span className="w-fit text-[16px] font-[700] leading-[100%] text-[green] lg:text-[24px]">
             Explore this project
           </span>
         </div>

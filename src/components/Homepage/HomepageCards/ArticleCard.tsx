@@ -40,7 +40,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             {article.description}
           </p>
         </div>
-        <div className="flex justify-between border-t pt-[14px] text-[14px] text-[#2E7D32] font-bold">
+        <div className="flex justify-between border-t-[0.6px] border-[#E0E0E0] pt-[14px] text-[14px] text-[#2E7D32] font-bold">
           <span className="">{article.author}</span>
           <span>Read More</span>
         </div>
