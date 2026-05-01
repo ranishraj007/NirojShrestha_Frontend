@@ -1,11 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { Home } from "lucide-react";
+import SEO from "@/components/SEO/SEO";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6 text-center">
+      <SEO
+        title="Page Not Found"
+        description="The requested page could not be found on Niroj Shrestha's website."
+        path="/404"
+        noIndex
+      />
       <div className="max-w-md w-full animate-fade-in-up">
         <h1 className="text-9xl font-extrabold text-blue-600 tracking-tight">404</h1>
         <div className="bg-white rounded-2xl shadow-xl p-10 mt-8 border border-gray-100 relative overflow-hidden">

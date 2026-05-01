@@ -6,8 +6,8 @@ const Blog = () => {
   return (
     <ContentListingPage
       items={getLatestItems(blogs, blogs.length)}
-      pageTitle="Blogs"
-      pageDescription="Explore recent stories, field notes, and personal reflections from the journey."
+      pageTitle="Field Stories"
+      pageDescription="Personal reflections from villages, classrooms, learning centers, and the quiet moments where community work becomes real."
       emptyLabel="No blogs found for this category."
       detailBasePath="/blog"
     />

@@ -2,31 +2,63 @@
 
 ## Project Overview
 
-This is a frontend project built with React and TypeScript, using Vite as the build tool. It is set up with Tailwind CSS for styling. The project was initialized from a minimal Vite template for React with TypeScript.
+This is the frontend for **Niroj Shrestha's personal portfolio and blog platform**. It is a modern React application built with TypeScript and Vite, designed to showcase projects, articles, and personal insights.
 
-## Building and Running
+## Tech Stack
 
-The following scripts are available in `package.json`:
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 7](https://vitejs.dev/)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) (using `@tailwindcss/vite` plugin)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-*   **`yarn dev`**: Starts the development server with Hot Module Replacement (HMR).
-*   **`yarn build`**: Compiles the TypeScript code and builds the project for production.
-*   **`yarn lint`**: Lints the codebase using ESLint.
-*   **`yarn preview`**: Serves the production build locally for previewing.
+## Project Structure
 
-To get started, first install the dependencies:
+The project follows a standard React directory structure:
 
-```bash
-yarn install
+- `src/api/`: API client and services.
+- `src/assets/`: Static assets like images and icons.
+- `src/components/`: Reusable UI components, organized by feature (Homepage, Navbar, Footer, etc.).
+- `src/lib/`: Utility functions, queries, and shared logic.
+- `src/pages/`: Page-level components corresponding to routes.
+- `src/router/`: Routing configuration using `react-router-dom`.
+- `src/staticData/`: Local static data used throughout the application.
+
+## Development
+
+### Getting Started
+
+1.  **Install dependencies**:
+    ```bash
+    yarn install
+    ```
+2.  **Start the development server**:
+    ```bash
+    yarn dev
+    ```
+3.  **Build for production**:
+    ```bash
+    yarn build
+    ```
+4.  **Preview the production build**:
+    ```bash
+    yarn preview
+    ```
+
+### Path Aliases
+
+The project uses a path alias for cleaner imports. `@/` points to the `src/` directory.
+
+Example:
+```tsx
+import { Navbar } from '@/components/Navbar/Navbar';
 ```
 
-Then, you can run the development server:
+## Conventions
 
-```bash
-yarn dev
-```
-
-## Development Conventions
-
-*   **Linting**: The project uses ESLint for code quality and consistency. The configuration can be found in `eslint.config.js`.
-*   **TypeScript**: The project uses TypeScript. Type checking is part of the build process.
-*   **Styling**: The project uses Tailwind CSS for styling. The configuration can be found in `vite.config.ts`.
+- **Linting**: ESLint is used for code quality. Run `yarn lint` to check for issues.
+- **Styling**: Use Tailwind CSS utility classes. Tailwind v4 is integrated directly via the Vite plugin.
+- **Components**: Prefer functional components with hooks.
+- **Types**: Ensure all new components and functions are properly typed with TypeScript.

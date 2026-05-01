@@ -1,201 +1,144 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import SEO from "@/components/SEO/SEO";
+import { breadcrumbSchema, personSchema } from "@/components/SEO/schema";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-[#2E7D32E5] via-[#2E7D32BF] to-[#1B5E20E5] py-[80px] md:py-[120px] px-[20px] md:px-[80px] lg:px-[150px] flex justify-center items-center text-center">
-        <div className="max-w-4xl flex flex-col gap-[16px] items-center">
-          <span className="text-[14px] lg:text-[16px] font-[500] leading-[26px] text-white text-center bg-[#FFFFFF33] border-[1.5px] border-[#FFFFFF4D] rounded-full px-[22px] py-[11px]">
-            Get In Touch
-          </span>
-          <h1 className="text-[36px] md:text-[48px] lg:text-[61px] font-[700] text-white leading-[120%] md:leading-[100%]">
-            Let's Make a <span className="text-[#0AC712]">Difference</span>{" "}
-            Together
+    <main>
+      <SEO
+        title="Contact Niroj Shrestha"
+        description="Contact Niroj Shrestha for community development collaborations, social work initiatives, speaking invitations, mentorship, and humanitarian work in Nepal."
+        path="/contact"
+        image="/og-image.jpg"
+        keywords={[
+          "contact Niroj Shrestha",
+          "social worker contact Nepal",
+          "community development collaboration Nepal",
+          "Pharping Kathmandu social work",
+        ]}
+        jsonLd={[
+          personSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ]}
+      />
+      <section className="bg-[#20382b] py-16 text-[#fffaf1] md:py-24">
+        <div className="story-container max-w-5xl animate-reveal-up">
+          <p className="editorial-kicker text-[#f0b35a]">Contact</p>
+          <h1 className="mt-5 text-[46px] font-black leading-[1.02] md:text-[76px]">
+            Let us work together to make a difference.
           </h1>
-          <p className="text-[16px] md:text-[20px] text-[#FFFFFFF2] font-[400] leading-[150%] max-w-2xl mt-4">
-            Whether you are looking to collaborate, seek mentorship, or
-            participate in community development initiatives, feel free to reach
-            out.
+          <p className="mt-6 max-w-2xl text-[18px] leading-9 text-[#e8dbc3]">
+            Whether you want to collaborate, support a local initiative, invite
+            Niroj to speak, or simply begin a conversation, this is a warm place
+            to start.
           </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="w-full max-w-7xl mx-auto py-[60px] md:py-[100px] px-[20px] md:px-[40px] lg:px-[80px] flex flex-col gap-[60px] md:gap-[100px]">
-        {/* Contact Info & Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[60px]">
-          {/* Contact Information */}
-          <div className="flex flex-col gap-[30px] lg:pr-10">
-            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-[700] text-[#1B5E20] leading-[120%]">
-              Contact Information
-            </h2>
-            <p className="text-[16px] md:text-[18px] text-[#424242] font-[400] leading-[180%] mb-4">
-              I am always open to discussing new projects, creative ideas or
-              opportunities to be part of your visions.
-            </p>
-
-            <div className="flex flex-col gap-[24px]">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <div className="bg-[#2E7D321A] text-[#2E7D32] p-3 rounded-lg flex-shrink-0">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h3 className="text-[18px] font-[600] text-[#1B5E20] mb-1">
-                    Call Us
-                  </h3>
-                  <div className="flex flex-col text-[#424242] text-[16px]">
-                    <a
-                      href="tel:+9779851013055"
-                      className="hover:text-[#2E7D32] transition-colors"
-                    >
-                      +977 9851013055
-                    </a>
-                    <a
-                      href="tel:015928105"
-                      className="hover:text-[#2E7D32] transition-colors"
-                    >
-                      015928105
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <div className="bg-[#2E7D321A] text-[#2E7D32] p-3 rounded-lg flex-shrink-0">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h3 className="text-[18px] font-[600] text-[#1B5E20] mb-1">
-                    Email Us
-                  </h3>
-                  <div className="flex flex-col text-[#424242] text-[16px]">
-                    <a
-                      href="mailto:Niroj@pharping.org.np"
-                      className="hover:text-[#2E7D32] transition-colors"
-                    >
-                      Niroj@pharping.org.np
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white shadow-sm border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
-                <div className="bg-[#2E7D321A] text-[#2E7D32] p-3 rounded-lg flex-shrink-0">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="text-[18px] font-[600] text-[#1B5E20] mb-1">
-                    Location
-                  </h3>
-                  <div className="flex flex-col text-[#424242] text-[16px]">
-                    <span>Pharping, Kathmandu</span>
-                    <span>Bagmati Province, Nepal</span>
-                  </div>
-                </div>
-              </div>
+      <section className="py-16 md:py-24">
+        <div className="story-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <aside className="space-y-5">
+            <div className="bg-[#fffaf1] p-6 shadow-[0_18px_45px_rgba(81,63,38,0.08)]">
+              <Phone className="text-[#d96f4b]" />
+              <h2 className="mt-4 text-[24px] font-black text-[#2f2a22]">Phone</h2>
+              <a className="mt-2 block text-[#675b49] hover:text-[#264f36]" href="tel:+9779851013055">
+                +977 9851013055
+              </a>
+              <a className="mt-1 block text-[#675b49] hover:text-[#264f36]" href="tel:015928105">
+                015928105
+              </a>
             </div>
-          </div>
+            <div className="bg-[#fffaf1] p-6 shadow-[0_18px_45px_rgba(81,63,38,0.08)]">
+              <Mail className="text-[#d96f4b]" />
+              <h2 className="mt-4 text-[24px] font-black text-[#2f2a22]">Email</h2>
+              <a className="mt-2 block break-words text-[#675b49] hover:text-[#264f36]" href="mailto:Niroj@pharping.org.np">
+                Niroj@pharping.org.np
+              </a>
+            </div>
+            <div className="bg-[#fffaf1] p-6 shadow-[0_18px_45px_rgba(81,63,38,0.08)]">
+              <MapPin className="text-[#d96f4b]" />
+              <h2 className="mt-4 text-[24px] font-black text-[#2f2a22]">Location</h2>
+              <p className="mt-2 leading-7 text-[#675b49]">
+                Pharping, Kathmandu
+                <br />
+                Bagmati Province, Nepal
+              </p>
+            </div>
+          </aside>
 
-          {/* Send Message Form */}
-          <div className="bg-white rounded-[24px] p-[30px] md:p-[40px] shadow-lg border border-gray-100">
-            <h2 className="text-[28px] md:text-[32px] font-[700] text-[#1B5E20] mb-[30px]">
-              Send a Message
+          <div className="bg-[#fffaf1] p-6 shadow-[0_18px_45px_rgba(81,63,38,0.08)] md:p-10">
+            <p className="editorial-kicker">Send a message</p>
+            <h2 className="mt-3 text-[34px] font-black leading-[1.08] text-[#2f2a22] md:text-[46px]">
+              Tell me what you hope to build, support, or learn.
             </h2>
             <form
-              className="flex flex-col gap-[20px]"
-              onSubmit={(e) => e.preventDefault()}
+              className="mt-8 grid gap-5"
+              onSubmit={(event) => event.preventDefault()}
             >
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="name"
-                  className="text-[#424242] font-[500] text-[16px]"
-                >
-                  Name *
+              <div className="grid gap-2">
+                <label htmlFor="name" className="font-black text-[#3f392f]">
+                  Name
                 </label>
                 <input
-                  type="text"
                   id="name"
+                  type="text"
                   required
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2E7D32] focus:ring-2 focus:ring-[#2E7D3233] outline-none transition-all placeholder:text-gray-400 text-[#424242]"
+                  className="border border-[#d8c7ad] bg-white px-4 py-4 text-[#2f2a22] outline-none transition placeholder:text-[#9a8b75] focus:border-[#264f36]"
                 />
               </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="text-[#424242] font-[500] text-[16px]"
-                >
-                  Email *
+              <div className="grid gap-2">
+                <label htmlFor="email" className="font-black text-[#3f392f]">
+                  Email
                 </label>
                 <input
-                  type="email"
                   id="email"
+                  type="email"
                   required
-                  placeholder="Your email address"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2E7D32] focus:ring-2 focus:ring-[#2E7D3233] outline-none transition-all placeholder:text-gray-400 text-[#424242]"
+                  placeholder="you@example.com"
+                  className="border border-[#d8c7ad] bg-white px-4 py-4 text-[#2f2a22] outline-none transition placeholder:text-[#9a8b75] focus:border-[#264f36]"
                 />
               </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="message"
-                  className="text-[#424242] font-[500] text-[16px]"
-                >
-                  Message *
+              <div className="grid gap-2">
+                <label htmlFor="message" className="font-black text-[#3f392f]">
+                  Message
                 </label>
                 <textarea
                   id="message"
-                  rows={5}
+                  rows={6}
                   required
-                  placeholder="Write your message here..."
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2E7D32] focus:ring-2 focus:ring-[#2E7D3233] outline-none transition-all placeholder:text-gray-400 text-[#424242] resize-y"
-                ></textarea>
+                  placeholder="Let us work together to make a difference..."
+                  className="resize-y border border-[#d8c7ad] bg-white px-4 py-4 text-[#2f2a22] outline-none transition placeholder:text-[#9a8b75] focus:border-[#264f36]"
+                />
               </div>
-
               <button
                 type="submit"
-                className="mt-4 w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-[600] text-[16px] py-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                className="inline-flex w-fit items-center gap-2 rounded-full bg-[#d96f4b] px-7 py-4 font-black text-white transition hover:-translate-y-0.5 hover:bg-[#bf5737]"
               >
-                <span>Send Message</span>
-                <Send size={18} />
+                Send Message <Send size={18} />
               </button>
             </form>
           </div>
         </div>
+      </section>
 
-        {/* Find Us Map Section */}
-        <div className="flex flex-col gap-[30px] pt-[40px] border-t border-gray-200">
-          <div className="flex flex-col items-center text-center gap-4">
-            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-[700] text-[#1B5E20] leading-[120%]">
-              Find Us
-            </h2>
-            <div className="flex items-center gap-2 text-[#424242] font-[500] bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
-              <MapPin className="text-[#2E7D32]" size={20} />
-              <span className="text-[16px] md:text-[18px]">
-                Shikharapur Community Campus, Pharping Kathmandu
-              </span>
-            </div>
-          </div>
-
-          {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18943378.388246797!2d69.08009823051826!3d22.843263700013598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb3d7ebc6d3e17%3A0xc1de4c01a6fc1ad2!2sShikharapur%20School.!5e1!3m2!1sen!2snp!4v1772557824914!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-
-          <div className="w-full h-[400px] md:h-[500px] rounded-[24px] overflow-hidden shadow-lg border-[4px] border-white relative bg-gray-200">
-            <iframe
-              src="https://www.google.com/maps?q=27.614877050065196,85.26810395805465&z=15&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title="School Location"
-              className="absolute inset-0"
-            />
-          </div>
+      <section className="pb-16 md:pb-24">
+        <div className="story-container overflow-hidden shadow-[0_18px_45px_rgba(81,63,38,0.08)]">
+          <iframe
+            src="https://www.google.com/maps?q=27.614877050065196,85.26810395805465&z=15&output=embed"
+            width="100%"
+            height="430"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            title="Shikharapur Community Campus location"
+          />
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

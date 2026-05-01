@@ -1,114 +1,93 @@
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Impact", path: "/projects" },
+  { name: "Stories", path: "/blog" },
+  { name: "Inspiration", path: "/inspiration" },
+  { name: "Articles", path: "/articles" },
+  { name: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Blog", path: "/blog" },
-    { name: "Articles", path: "/articles" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-    { name: "Inspiration", path: "/inspiration" },
-  ];
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex flex-row justify-between items-center px-[30px] py-[20px] md:py-[5px] transition-all duration-300">
-      <div className="md:pt-[28px]">
-        <a
-          href="/"
-          className="text-[#2E7D32] font-bold text-[28px] md:text-[31px] transform hover:scale-105 transition-all duration-300 ease-in-out block"
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#e8ddca]/80 bg-[#fbf7ee]/92 backdrop-blur-xl">
+      <div className="story-container flex h-[76px] items-center justify-between md:h-[88px]">
+        <Link
+          to="/"
+          className="group flex flex-col leading-none"
+          onClick={() => setIsMenuOpen(false)}
         >
-          Niroj <span className="text-[orange]/70">Shrestha</span>
-        </a>
-      </div>
+          <span className="text-[22px] font-black text-[#264f36] md:text-[28px]">
+            Niroj Shrestha
+          </span>
+          <span className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-[#b15b3f]">
+            Community impact
+          </span>
+        </Link>
 
-      {/* Hamburger Button */}
-      <div className="md:hidden flex items-center">
-        <button
-          onClick={toggleMenu}
-          className="text-[#424242] focus:outline-none p-2"
-          aria-label="Toggle menu"
+        <div className="hidden items-center gap-1 md:flex">
+          {navLinks.map((link) => {
+            const isActive =
+              link.path === "/"
+                ? location.pathname === "/"
+                : location.pathname.startsWith(link.path);
+
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`rounded-full px-4 py-2 text-[15px] font-bold transition ${
+                  isActive
+                    ? "bg-[#264f36] text-[#fffaf1]"
+                    : "text-[#4f4638] hover:bg-[#eadfce] hover:text-[#264f36]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        <Link
+          to="/contact"
+          className="hidden rounded-full bg-[#d96f4b] px-5 py-3 text-[14px] font-black text-white shadow-[0_12px_28px_rgba(217,111,75,0.24)] transition hover:-translate-y-0.5 hover:bg-[#bf5737] lg:inline-flex"
         >
-          {isMenuOpen ? (
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          ) : (
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          )}
+          Start a conversation
+        </Link>
+
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen((value) => !value)}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d7c9b3] text-[#264f36] md:hidden"
+          aria-label="Toggle navigation menu"
+        >
+          {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex flex-row justify-between gap-[16px] pt-[24px] text-[#424242] text-[20px] font-[400]">
-        {navLinks.map((link) => {
-          const isActive = link.path === "/" 
-            ? location.pathname === "/" 
-            : location.pathname.startsWith(link.path);
-
-          return (
-            <a
-              key={link.name}
-              href={link.path}
-              className={`px-[21px] py-[10px] transition-all duration-300 ease-in-out transform hover:scale-110 ${
-                isActive ? "text-[#2E7D32] font-semibold" : "hover:text-[#2E7D32]"
-              }`}
-            >
-              {link.name}
-            </a>
-          );
-        })}
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`${
-          isMenuOpen ? "flex" : "hidden"
-        } absolute top-full left-0 w-full bg-white flex-col items-center gap-4 py-8 shadow-lg md:hidden z-50`}
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.path}
-            onClick={() => setIsMenuOpen(false)}
-            className="text-[#424242] text-[20px] font-[400] hover:text-[#2E7D32] transition-all duration-300"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+      {isMenuOpen && (
+        <div className="border-t border-[#e8ddca] bg-[#fbf7ee] px-5 py-5 md:hidden">
+          <div className="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-lg px-4 py-3 text-[17px] font-bold text-[#3d352b] hover:bg-[#eadfce]"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

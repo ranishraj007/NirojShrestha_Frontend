@@ -1,5 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { formatContentDate } from "@/lib/content";
+import SEO, { absoluteUrl, siteConfig } from "@/components/SEO/SEO";
+import { breadcrumbSchema } from "@/components/SEO/schema";
 import { projects } from "@/staticData";
 
 const ProjectDetail = () => {
@@ -26,6 +28,37 @@ const ProjectDetail = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col pb-[60px]">
+      <SEO
+        title={project.title}
+        description={project.description}
+        path={`/projects/${project.slug}`}
+        image="/og-image.jpg"
+        keywords={[project.title, project.category, project.location, "Niroj Shrestha", "community project Nepal"]}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Project",
+            name: project.title,
+            description: project.description,
+            url: absoluteUrl(`/projects/${project.slug}`),
+            image: siteConfig.defaultImage,
+            location: {
+              "@type": "Place",
+              name: project.location,
+            },
+            creator: {
+              "@type": "Person",
+              name: "Niroj Shrestha",
+              url: siteConfig.url,
+            },
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Impact", path: "/projects" },
+            { name: project.title, path: `/projects/${project.slug}` },
+          ]),
+        ]}
+      />
       <div
         className="relative flex h-[320px] w-full flex-col justify-end bg-cover bg-center md:h-[520px]"
         style={{ backgroundImage: `url(${project.image})` }}

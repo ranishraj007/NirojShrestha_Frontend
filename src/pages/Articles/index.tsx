@@ -7,7 +7,7 @@ const Articles = () => {
     <ContentListingPage
       items={getLatestItems(articles, articles.length)}
       pageTitle="Articles"
-      pageDescription="Read the latest articles, ideas, and reflections from our work across communities."
+      pageDescription="Ideas, lessons, and practical reflections on education, sustainability, culture, and community-led change."
       emptyLabel="No articles found for this category."
       detailBasePath="/articles"
     />

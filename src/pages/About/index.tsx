@@ -1,94 +1,196 @@
 import NirojShrestha from "@/assets/images/NirojShresthaImage.jpeg";
+import SEO from "@/components/SEO/SEO";
+import { breadcrumbSchema, personSchema } from "@/components/SEO/schema";
+import { ArrowRight, Compass, GraduationCap, HeartHandshake, Sprout } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const values = [
+  {
+    icon: <HeartHandshake size={22} />,
+    title: "Human dignity",
+    text: "Every program begins with respect for the people who know their community best.",
+  },
+  {
+    icon: <GraduationCap size={22} />,
+    title: "Lifelong learning",
+    text: "Education is not limited to classrooms; it grows through culture, skills, reflection, and shared practice.",
+  },
+  {
+    icon: <Sprout size={22} />,
+    title: "Sustainable action",
+    text: "Good work should last after the event ends, so communities can maintain and adapt it themselves.",
+  },
+];
+
+const milestones = [
+  {
+    year: "Roots",
+    title: "Raised in Dakshinkali",
+    text: "Niroj's early life in a Newari community shaped his belief that identity, place, and learning belong together.",
+  },
+  {
+    year: "Study",
+    title: "Master's in Social Work",
+    text: "At St. Xavier's College, he deepened the social work lens that guides his field practice today.",
+  },
+  {
+    year: "Build",
+    title: "Shikharapur Community Campus and CLC",
+    text: "He helped create learning spaces that connect education with local leadership, culture, and livelihood.",
+  },
+  {
+    year: "Share",
+    title: "Representing Nepal globally",
+    text: "Through IVLP, ESD exchange programs, and international conferences, he carries local lessons into global conversations.",
+  },
+];
 
 const About = () => {
   return (
-    <div className="flex flex-col lg:gap-[73px] gap-[40px] pt-[48px] px-[24px] md:px-[40px] lg:px-[100px] xl:px-[150px] pb-[80px] w-full max-w-[1600px] mx-auto overflow-hidden">
-      <div className="flex justify-center">
-        <h1 className="text-[42px] lg:text-[61px] font-bold text-[#424242] text-center relative inline-block">
-          Meet Niroj Shrestha
-          <svg
-            className="absolute left-0 -bottom-2 lg:-bottom-4 w-full"
-            height="20"
-            viewBox="0 0 300 20"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 12 Q25 2 50 12 T100 12 T150 12 T200 12 T250 12 T300 12"
-              stroke="#E76F51"
-              strokeWidth="4"
-              fill="transparent"
-              strokeLinecap="round"
-            />
-          </svg>
-        </h1>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-6 lg:mt-0">
-        {/* Image Section */}
-        <div className="flex justify-center w-full px-4 lg:px-0">
-          <div className="relative w-full max-w-[500px] z-10 group">
-            {/* Decorative background shape */}
-            {/* <div className="absolute inset-0 bg-linear-to-tr from-[#E76F51] to-[#F4A261] rounded-[40px] transform translate-x-4 lg:translate-x-8 translate-y-4 lg:translate-y-8 -z-10 opacity-70 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div> */}
+    <main>
+      <SEO
+        title="About Niroj Shrestha"
+        description="Learn about Niroj Shrestha's journey as a social worker, educator, Shikharapur Community Campus founder, and community learning practitioner in Nepal."
+        path="/about"
+        image="/og-image.jpg"
+        type="profile"
+        keywords={[
+          "about Niroj Shrestha",
+          "Niroj Shrestha biography",
+          "social worker Kathmandu",
+          "Shikharapur Community Campus",
+          "St Xavier's College social work",
+        ]}
+        jsonLd={[
+          personSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ]}
+      />
+      <section className="bg-[#20382b] py-16 text-[#fffaf1] md:py-24">
+        <div className="story-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="animate-reveal-up">
+            <p className="editorial-kicker text-[#f0b35a]">About Niroj</p>
+            <h1 className="mt-5 text-[46px] font-black leading-[1.02] md:text-[74px]">
+              A life shaped by service, learning, and community trust.
+            </h1>
+            <p className="mt-6 max-w-2xl text-[18px] leading-9 text-[#e8dbc3]">
+              Niroj Shrestha is a social worker, educator, and community learning
+              practitioner from Pharping, Kathmandu. His work is rooted in a
+              simple conviction: when people are trusted with knowledge,
+              opportunity, and dignity, communities begin to transform from
+              within.
+            </p>
+            <Link
+              to="/projects"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#f0b35a] px-6 py-4 font-black text-[#20382b] transition hover:-translate-y-0.5"
+            >
+              Explore his impact <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="relative animate-soft-scale">
             <img
               src={NirojShrestha}
-              alt="Niroj Shrestha Profile"
-              className="w-full h-auto object-cover rounded-[40px] shadow-2xl border-[6px] border-white transition-transform duration-500 group-hover:scale-[1.02]"
+              alt="Niroj Shrestha"
+              className="aspect-[4/5] w-full object-cover shadow-[0_24px_70px_rgba(0,0,0,0.28)]"
             />
+            <div className="absolute bottom-0 left-0 right-0 bg-[#d96f4b] p-5 text-white">
+              <p className="text-[21px] font-black leading-7">
+                "The most meaningful change is built with people, not for them."
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Text Section */}
-        <div className="flex flex-col gap-6 text-[#424242] text-[16px] md:text-[18px] lg:text-[20px] leading-[32px] md:leading-[36px] font-medium bg-white/80 backdrop-blur-sm p-6 md:p-10 lg:p-12 rounded-[30px] shadow-sm border border-gray-100">
-          <h2 className="text-[32px] lg:text-[42px] font-extrabold text-[#2A2A2A] leading-tight mb-2">
-            The Story Behind <span className="text-[#E76F51]">The Mission</span>
-          </h2>
-
-          <div className="flex flex-col gap-5 text-gray-700">
+      <section className="py-18 md:py-24">
+        <div className="story-container grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="editorial-kicker">Personal journey</p>
+            <h2 className="mt-4 text-[38px] font-black leading-[1.08] md:text-[56px]">
+              From a local community to lifelong public service.
+            </h2>
+          </div>
+          <div className="space-y-6 text-[18px] leading-9 text-[#5f5546]">
             <p>
-              Born in a vibrant Newari ethnic community in{" "}
-              <span className="text-[#2E7D32] font-bold">
-                Dakshinkali Municipality, Kathmandu
-              </span>
-              , Niroj Shrestha’s journey began with a profound commitment to
-              social equity and education. He recognized early on that
-              sustainable change requires empowering the roots of society.
+              Born in Dakshinkali Municipality, Niroj grew up surrounded by the
+              strength of community life: shared rituals, local knowledge,
+              neighborly care, and the everyday challenges families face when
+              opportunity is uneven.
             </p>
-
             <p>
-              After earning his Master’s in Social Work from{" "}
-              <span className="text-[#4FC3F7] font-bold">
-                St. Xavier’s College
-              </span>
-              , he set out to bridge gaps in local education. This vision
-              materialized when he became the Founder and Principal of the{" "}
-              <span className="text-[#2E7D32] font-bold">
-                Shikharapur Community Campus
-              </span>{" "}
-              and an initiator of the Shikharapur Community Learning Center.
+              Social work became his way of responding to that reality. After
+              earning his Master's in Social Work from St. Xavier's College, he
+              committed himself to education and lifelong learning as practical
+              tools for equity.
             </p>
-
             <p>
-              His pioneering approaches, such as the{" "}
-              <span className="text-[#E76F51] font-bold">
-                Bottle House Project
-              </span>
-              , have redefined sustainable learning. This initiative stands as a
-              Japanese award-winning model of Education for Sustainable
-              Development (ESD), promoted extensively by UNESCO and Nepal’s Ministry
-              of Education.
-            </p>
-
-            <p>
-              Today, he continues his academic exploration by pursuing an MPhil
-              in Social Work from Tribhuvan University, representing Nepal globally,
-              and empowering youth and women towards lifelong learning and
-              local entrepreneurship.
+              As Founder and Principal of Shikharapur Community Campus and an
+              initiator of Shikharapur Community Learning Center, he has helped
+              create places where youth, women, farmers, and local leaders can
+              gather, learn, and build confidence together.
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="bg-[#f4ead9] py-18 md:py-24">
+        <div className="story-container">
+          <div className="max-w-3xl">
+            <p className="editorial-kicker">Values and mission</p>
+            <h2 className="mt-4 text-[38px] font-black leading-[1.08] md:text-[56px]">
+              The mission is warm in spirit and practical in action.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {values.map((value) => (
+              <article key={value.title} className="bg-[#fffaf1] p-7 shadow-[0_18px_45px_rgba(81,63,38,0.08)]">
+                <div className="inline-flex h-12 w-12 items-center justify-center bg-[#264f36] text-white">
+                  {value.icon}
+                </div>
+                <h3 className="mt-6 text-[25px] font-black text-[#2f2a22]">
+                  {value.title}
+                </h3>
+                <p className="mt-4 text-[15px] leading-7 text-[#675b49]">
+                  {value.text}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-18 md:py-24">
+        <div className="story-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="editorial-kicker">Timeline</p>
+            <h2 className="mt-4 text-[38px] font-black leading-[1.08] md:text-[56px]">
+              A journey of learning, building, and sharing.
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {milestones.map((item) => (
+              <article key={item.title} className="grid gap-4 border-t border-[#d8c7ad] py-6 md:grid-cols-[120px_1fr]">
+                <div className="flex items-center gap-2 text-[#b15b3f]">
+                  <Compass size={18} />
+                  <span className="font-black">{item.year}</span>
+                </div>
+                <div>
+                  <h3 className="text-[26px] font-black text-[#2f2a22]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[16px] leading-8 text-[#675b49]">
+                    {item.text}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 

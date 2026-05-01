@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+:root {
+  color: #2f2a22;
+  background: #fbf7ee;
+  font-family:
+    "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(251, 247, 238, 0.96), rgba(246, 239, 226, 0.94)),
+    #fbf7ee;
+}
+
+::selection {
+  background: #d96f4b;
+  color: #fffaf1;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-reveal-up {
+  animation: reveal-up 700ms ease both;
+}
+
+.animate-soft-scale {
+  animation: soft-scale 900ms ease both;
+}
+
+.story-container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+.editorial-kicker {
+  color: #b15b3f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
