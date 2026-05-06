@@ -1,0 +1,14 @@
+{
+  "name": "Niroj Shrestha",
+  "short_name": "Niroj",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#20382b",
+  "background_color": "#20382b",
+  "display": "standalone"
+}
