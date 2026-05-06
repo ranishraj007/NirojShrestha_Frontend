@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const DEFAULT_SITE_URL = "https://nirojshrestha.com.np";
+const DEFAULT_SITE_URL = "https://nirojshrestha05.com.np";
 const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(/\/$/, "");
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
