@@ -98,7 +98,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="bg-[#fbf7ee] py-12">
+      {/* <section className="bg-[#fbf7ee] py-12">
         <div className="story-container grid gap-4 md:grid-cols-3">
           {impactStats.map((stat, index) => (
             <div
@@ -115,7 +115,7 @@ const Homepage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="py-18 md:py-24">
         <div className="story-container grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
